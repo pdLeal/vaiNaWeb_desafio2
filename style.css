@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
 html {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
 }
 
 *, *::before, *::after {
@@ -8,6 +11,7 @@ html {
     padding: 0;
 }
 
+/* HEADER */
 header {
     text-align: center;
 }
@@ -36,4 +40,49 @@ li > a {
 
 .prime-img {
     width: 100%;
+}
+
+/* MAIN */
+main {
+    /* width: 95%; */
+    margin: 48px auto;
+    padding: 16px;
+}
+
+h2 {
+    width: 65%;
+    margin: 16px auto;
+}
+
+.aclamados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.seta {
+    width: 50px;
+    margin-top: -40px;
+    margin-inline: 24px;
+}
+
+figure {
+    font-weight: 800;
+    text-align: center;
+}
+
+.poster {
+    margin-bottom: 8px;
+    width: clamp(150px,20vw, 300px);
+    border: 5px solid black;
+    border-radius: 13.5%;
+}
+
+#middle-poster {
+    margin-inline: 24px;
 }
