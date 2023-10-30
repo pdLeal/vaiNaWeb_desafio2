@@ -44,7 +44,6 @@ li > a {
 
 /* MAIN */
 main {
-    /* width: 95%; */
     margin: 48px auto;
     padding: 16px;
 }
@@ -55,20 +54,40 @@ h2 {
 }
 
 .aclamados {
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {
+.outer-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-container {
     display: flex;
     justify-content: space-around;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hidden-right {
+    position: absolute;
+    transform: translate(1000px);
+    opacity: 0;
+}
+
+.hidden-left {
+    position: absolute;
+    opacity: 0;
 }
 
 .seta {
     width: 50px;
     margin-top: -40px;
     margin-inline: 24px;
+    cursor: pointer;
 }
 
 figure {
