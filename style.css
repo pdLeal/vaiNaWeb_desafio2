@@ -35,7 +35,7 @@ ul {
 
 li > a {
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
 }
 
 .prime-img {
@@ -106,4 +106,32 @@ figure {
 
 .middle-poster {
     margin-inline: 24px;
+}
+
+/* FOOTER */
+footer {
+    height: 8vh;
+    color: whitesmoke;
+    padding-inline: 16px;
+    padding-block: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E1E1E;
+}
+
+footer > p {
+    max-width: 60%;
+    font-size: clamp(8px, 2vw, 16px);
+}
+
+.logos {
+    width: clamp(140px, 20%, 200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logos > img {
+    width: clamp(30px, 5vw, 50px);
 }
