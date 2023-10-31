@@ -1,34 +1,51 @@
 // Seleciona as setas
-const aclamados = document.querySelector(".aclamados");
-const setaEsquerda = aclamados.firstElementChild;
-const setaDireita = aclamados.lastElementChild;
-// Seleciona as divs-filhas dentro do outer-container
-const outer = document.querySelector(".outer-container");
-const inner1 = outer.firstElementChild;
-const inner2 = outer.lastElementChild;
-
-let outerWidth = outer.offsetWidth;
-inner2.style.transform = `translate(${outerWidth + 24}px)`;
+const aclamados = document.querySelectorAll(".aclamados");
+aclamados.forEach(sec => {
+    const setaEsquerda = sec.firstElementChild;
+    const setaDireita = sec.lastElementChild;
+    setaDireita.addEventListener("click", scrollRight);
+    setaEsquerda.addEventListener("click", scrollLeft);
+});
+// Seleciona os outer-containers e seus respectivos tamanhos
+const outers = document.querySelectorAll(".outer-container");
+let outerCima = outers[0];
+let outerBaixo = outers[1];
+let cimaWidth = outerCima.offsetWidth;
+let baixoWidth = outerBaixo.offsetWidth;
+// Difine a posição inicial das divs escondidas
+outerCima.lastElementChild.style.transform = `translate(${cimaWidth + 16}px)`;
+outerBaixo.lastElementChild.style.transform = `translate(${baixoWidth + 16}px)`;
 
 function scrollRight() {
     ajustarOuter();
-    inner1.classList.add("hidden-left");
-    inner2.classList.remove("hidden-right");
-    inner1.style.transform = `translate(-${outerWidth + 24}px)`;
-    inner2.style.transform = `translate(0)`;
+    const previousSibling = this.previousElementSibling;
+    previousSibling.firstElementChild.classList.add("hidden-left");
+    previousSibling.lastElementChild.classList.remove("hidden-right");
+
+    if(outerCima === previousSibling) {
+        previousSibling.firstElementChild.style.transform = `translate(-${cimaWidth + 16}px)`; 
+    } else {
+        previousSibling.firstElementChild.style.transform = `translate(-${baixoWidth + 16}px)`;
+    }
+    
+    previousSibling.lastElementChild.style.transform = `translate(0)`;
 }
 
 function scrollLeft() {
     ajustarOuter();
-    inner1.classList.remove("hidden-left");
-    inner2.classList.add("hidden-right");
-    inner2.style.transform = `translate(${outerWidth + 24}px)`;
-    inner1.style.transform = `translate(0)`;
+    const nextSibling = this.nextElementSibling;
+    nextSibling.firstElementChild.classList.remove("hidden-left");
+    nextSibling.lastElementChild.classList.add("hidden-right");
+    nextSibling.firstElementChild.style.transform = `translate(0)`;
+    
+    if(outerCima === nextSibling) {
+        nextSibling.lastElementChild.style.transform = `translate(${cimaWidth + 16}px)`;
+    } else {
+        nextSibling.lastElementChild.style.transform = `translate(${baixoWidth + 16}px)`;
+    }
 }
 
 function ajustarOuter() {
-    outerWidth = outer.offsetWidth;
+    cimaWidth = outerCima.offsetWidth;
+    baixoWidth = outerBaixo.offsetWidth;
 }
-
-setaDireita.addEventListener("click", scrollRight);
-setaEsquerda.addEventListener("click", scrollLeft);

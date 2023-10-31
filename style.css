@@ -50,7 +50,7 @@ main {
 
 h2 {
     width: 65%;
-    margin: 16px auto;
+    margin: 24px auto 16px;
 }
 
 .aclamados {
@@ -62,6 +62,8 @@ h2 {
 
 .outer-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -74,7 +76,6 @@ h2 {
 
 .hidden-right {
     position: absolute;
-    transform: translate(1000px);
     opacity: 0;
 }
 
@@ -98,10 +99,11 @@ figure {
 .poster {
     margin-bottom: 8px;
     width: clamp(150px,20vw, 300px);
+    aspect-ratio: 2 / 3;
     border: 5px solid black;
     border-radius: 13.5%;
 }
 
-#middle-poster {
+.middle-poster {
     margin-inline: 24px;
 }
