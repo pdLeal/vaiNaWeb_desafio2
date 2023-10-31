@@ -49,6 +49,7 @@ main {
 }
 
 h2 {
+    font-size: clamp(24px, 10vw, 30px);;
     width: 65%;
     margin: 24px auto 16px;
 }
@@ -91,9 +92,17 @@ h2 {
     cursor: pointer;
 }
 
+.seta:active {
+    width: 55px;
+}
+
 figure {
     font-weight: 800;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .poster {
@@ -134,4 +143,36 @@ footer > p {
 
 .logos > img {
     width: clamp(30px, 5vw, 50px);
+}
+
+/* Responsivo */
+@media only screen and (max-width: 790px) {
+    .seta {
+        display: none;
+    }
+
+    .outer-container {
+        flex-direction: column;
+    }
+
+    .inner-container {
+        flex-direction: column;
+    }
+
+    .hidden-right {
+        position: static;
+        opacity: 1;
+    }
+
+    figure {
+        margin-bottom: 48px;
+    }
+
+    figcaption {
+        font-size: 24px;
+    }
+
+    .poster {
+        width: clamp(250px, 90vw, 500px);
+    }
 }
