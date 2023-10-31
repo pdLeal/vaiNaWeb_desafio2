@@ -1,1 +1,3 @@
-# vaiNaWeb_desafio2
+<h1 align=center>Desafio 2 do Vai na Web 📓</h1>
+
+<p align="justify">O objetivo do desafio era fazer um clone simples e estático da Amazon Prime Video, a fim de consolidar conceitos e práticas, como HTML semântico e aplicação de CSS básico. Entretando, achei que seria mais divertido também fazer com que a seleção de filmes fosse dinâmica, além de uma boa oportunidade para práticar reponsividade :trollface:</p>
